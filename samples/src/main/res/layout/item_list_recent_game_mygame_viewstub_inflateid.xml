@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_white_1000"
+
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dimen_basic4">
+
+
+        <include layout="@layout/fragment_course_detail_divider_include" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+
+        android:id="@+id/item_list_appointment_myappointment_unpay"
+        android:layout_width="match_parent"
+
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_basic1"
+        android:paddingLeft="@dimen/dimen_basic4"
+        android:paddingRight="@dimen/dimen_basic4"
+        android:paddingTop="@dimen/dimen_basic1">
+
+        <TextView
+
+            android:id="@+id/item_list_appointment_myappointment_unpay_hint"
+            style="@style/TextStyleNormal.ListItemTitle"
+            android:layout_weight="1" />
+
+
+        <Button
+
+            android:id="@+id/item_list_appointment_myappointment_unpay_btn"
+            style="@style/BottomBarButtonStyle"
+            android:focusable="false"
+            android:paddingLeft="@dimen/dimen_basic8"
+            android:paddingRight="@dimen/dimen_basic8"
+            android:stateListAnimator="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/item_list_appointment_myappointment_pay"
+        android:layout_width="match_parent"
+
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dimen_basic1"
+
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_basic1"
+        android:paddingLeft="@dimen/dimen_basic4"
+        android:paddingRight="@dimen/dimen_basic4"
+        android:paddingTop="@dimen/dimen_basic1">
+
+        <TextView
+            android:id="@+id/item_list_appointment_myappointment_pay_hint"
+            style="@style/TextStyleNormal.ListItemTitle"
+            android:layout_weight="1" />
+
+
+        <TextView
+            android:id="@+id/item_list_appointment_myappointment_pay_remain"
+            style="@style/TextStyleNormal.ListItemTitle"
+            android:textColor="@color/app_main_color" />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_basic2"
+        android:background="@color/background" />
+
+
+</LinearLayout>

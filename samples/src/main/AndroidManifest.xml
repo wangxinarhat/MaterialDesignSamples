@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="wang.wangxinarhat.materialdesignsamples">
+
+    <application
+        android:name="wang.wangxinarhat.materialdesignsamples.global.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.CollapsingToolbarLayoutDemoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.RecyclerViewDemoActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.EditTextDecimalLimitActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.TabLayoutDemoActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.PinnedSectionListActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.ExpandableListActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.PinnedHeaderExpandableListViewDemoActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.ToolbarSearchDemoActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.ScreenStatusActivity" />
+
+
+        <!--广播接收者-->
+        <receiver android:name="wang.wangxinarhat.materialdesignsamples.receiver.ScreenStatusReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+            </intent-filter>
+        </receiver>
+
+        <!--服务-->
+        <service android:name="wang.wangxinarhat.materialdesignsamples.service.PoService"/>
+
+
+    </application>
+
+</manifest>

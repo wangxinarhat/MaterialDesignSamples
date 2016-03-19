@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--加载更多和全部加载完毕布局-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/selectableItemBackground"
+        >
+        <!--全部加载-->
+        <TextView
+            android:id="@+id/footer_end_and_load_more_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dimen_basic2"
+            android:text="全部加载完了"
+            android:textColor="@color/text_black_secondary"
+            android:textSize="@dimen/text_size_caption"
+            android:visibility="gone"/>
+        <!--加载更多-->
+        <LinearLayout
+            android:id="@+id/footer_end_and_load_more_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dimen_basic2"
+                android:text="全部加载完了"
+                android:textColor="@color/text_black_secondary"
+                android:textSize="@dimen/text_size_caption"/>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

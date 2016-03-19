@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_fastscroll"
+        app:showAsAction="never"
+        android:title="@string/action_fastscroll"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/action_addpadding"
+        app:showAsAction="never"
+        android:title="@string/action_addpadding"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/action_showShadow"
+        app:showAsAction="never"
+        android:title="@string/action_showShadow"
+        android:checkable="true"/>
+    
+    <item
+        android:id="@+id/action_showHeaderAndFooter"
+        app:showAsAction="never"
+        android:title="@string/action_showHeaderAndFooter"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/action_updateDataset"
+        app:showAsAction="never"
+        android:title="@string/action_updateDataset"
+        />
+
+</menu>

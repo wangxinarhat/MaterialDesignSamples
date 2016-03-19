@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_white_1000"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dimen_basic2"
+    android:paddingLeft="@dimen/dimen_basic4"
+    android:paddingRight="@dimen/dimen_basic4"
+    android:paddingTop="@dimen/dimen_basic2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_white_1000"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:background="@mipmap/default_avatar"
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/avatar_size_big"
+            android:layout_height="@dimen/avatar_size_big" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_basic2"
+            android:layout_toRightOf="@id/avatar"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_detail_appointment_publisher_name"
+                    style="@style/FragmentBaseTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true" />
+
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/item_detail_appointment_publisher_introduction"
+                style="@style/CourseTimeTextStyle"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dimen_basic2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/item_detail_appointment_publisher_phone"
+                android:layout_width="@dimen/avatar_size_normal"
+                android:layout_height="@dimen/avatar_size_normal"
+                android:background="@mipmap/ic_operate_call" />
+
+            <View
+                android:layout_width="@dimen/dimen_divider_size"
+                android:layout_height="@dimen/base_button_size"
+                android:layout_marginLeft="@dimen/dimen_basic2"
+                android:layout_marginRight="@dimen/dimen_basic2"
+                android:background="@color/text_black_dividers" />
+
+            <ImageButton
+                android:id="@+id/item_detail_appointment_publisher_message"
+                android:layout_width="@dimen/avatar_size_normal"
+                android:layout_height="@dimen/avatar_size_normal"
+                android:background="@mipmap/ic_operate_chat" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

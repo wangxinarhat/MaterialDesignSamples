@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- button点击状态下的字体颜色 -->
+    <item android:state_pressed="true" android:color="@color/grey_white_1000"></item>
+    <!-- button正常状态下的字体颜色 -->
+    <item android:state_pressed="false" android:color="@color/text_black"></item>
+</selector> 

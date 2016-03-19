@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><!--我的Fragment分割线-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dimen_divider_size"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/dimen_basic2"
+    android:layout_marginRight="@dimen/dimen_basic2"
+    android:background="@color/text_black_dividers">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:src="@color/text_black_dividers" />
+</RelativeLayout>
