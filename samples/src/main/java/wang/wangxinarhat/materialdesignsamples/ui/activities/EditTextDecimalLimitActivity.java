@@ -51,6 +51,9 @@ public class EditTextDecimalLimitActivity extends BaseActivity implements View.O
         initView();
     }
 
+
+
+
     private void initView() {
         EditUtils.bindInputFilter(editText0);
 
