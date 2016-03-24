@@ -49,6 +49,8 @@ public class EditTextDecimalLimitActivity extends BaseActivity implements View.O
         ButterKnife.bind(this);
 
         initView();
+
+
     }
 
 

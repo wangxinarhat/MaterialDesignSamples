@@ -82,6 +82,10 @@ public class RecyclerViewDemoActivity extends BaseActivity implements SwipeRefre
                         .getDisplayMetrics()));
 
 
+
+
+
+
         mSwipeRefreshLayout.setOnRefreshListener(this);
 
     }
