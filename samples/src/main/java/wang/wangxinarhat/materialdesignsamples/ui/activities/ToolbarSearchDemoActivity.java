@@ -33,12 +33,15 @@ import wang.wangxinarhat.materialdesignsamples.utils.MyToast;
 public class ToolbarSearchDemoActivity extends BaseActivity implements RecyclerOnItemClickListener.OnItemClickListener {
 
 
-    @Bind(R.id.search_view)
-    MaterialSearchView searchView;
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
+
     @Bind(R.id.activity_toolbar_search_recycler)
     RecyclerView recyclerView;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
+    @Bind(R.id.search_view)
+    MaterialSearchView searchView;
+
+
     private SearchPeopleAdapter mAdapter;
     private ArrayList<People> mPeopleList;
 
@@ -96,7 +99,7 @@ public class ToolbarSearchDemoActivity extends BaseActivity implements RecyclerO
         searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
             @Override
             public void onSearchViewShown() {
-               MyToast.showShortToast("?????");
+                MyToast.showShortToast("?????");
             }
 
             @Override
@@ -118,7 +121,7 @@ public class ToolbarSearchDemoActivity extends BaseActivity implements RecyclerO
             final String name = people.getName();
             final String des = people.getDescription();
 
-            if (name.contains(query) || des.contains(query) ||nameEn.contains(query) || desEn.contains(query)) {
+            if (name.contains(query) || des.contains(query) || nameEn.contains(query) || desEn.contains(query)) {
 
                 filteredModelList.add(people);
 
@@ -139,8 +142,8 @@ public class ToolbarSearchDemoActivity extends BaseActivity implements RecyclerO
         String[] peopleName = {"Kaka", "Modric", "Rooney", "Ibla", "Bale", "死神", "Maurice Moss", "Roy Trenneman",};
         String[] peopleDes = {"The best player", "莫德里奇是最好的后腰", "鲁尼踢得不好", "伊贝拉是谁？", "贝尔跑得真快", "Aaron", "Oh, four, I mean five, I mean fire!", "哈哈"};
 
-        for (int i = 0;i < peopleName.length;i++) {
-            mPeopleList.add(new People(peopleName[i],peopleDes[i]));
+        for (int i = 0; i < peopleName.length; i++) {
+            mPeopleList.add(new People(peopleName[i], peopleDes[i]));
         }
 
         mAdapter = new SearchPeopleAdapter(mPeopleList);

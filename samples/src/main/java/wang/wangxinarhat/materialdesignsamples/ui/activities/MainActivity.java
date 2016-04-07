@@ -2,6 +2,7 @@ package wang.wangxinarhat.materialdesignsamples.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -118,6 +119,7 @@ public class MainActivity extends BaseActivity
         mList.add("CoordinatorLayout & TabLayout 结合ViewPagerDemo");
         mList.add("仿qq联系人列表Demo");
         mList.add("Toolbar上searchView实现");
+        mList.add("纸飞机Demo");
 
         mList.add("PinnedHeaderExpandableListViewDemoActivity    Demo");
         mList.add("FloatingGroupExpandableListView  Demo");
@@ -150,17 +152,20 @@ public class MainActivity extends BaseActivity
                 startActivity(ToolbarSearchDemoActivity.getStartIntent());
                 break;
             case 4:
+                startActivity(FlyDemoActivity.getStartIntent());
+                break;
+  case 5:
                 startActivity(PinnedHeaderExpandableListViewDemoActivity.getStartIntent());
                 break;
 
-            case 5:
+            case 6:
                 startActivity(FloatingGroupExpandableListViewActivity.getStartIntent());
                 break;
 
-            case 6:
+            case 7:
                 startActivity(EditTextDecimalLimitActivity.getStartIntent());
                 break;
-            case 7:
+            case 8:
                 startActivity(ScreenStatusActivity.getStartIntent());
                 break;
         }
@@ -181,7 +186,16 @@ public class MainActivity extends BaseActivity
 
     @Override
     public void onRefresh() {
-        //TODO pullToRrefresh
+
+
+
+        mSwipeRefreshLayout.setRefreshing(true);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        },2000);
     }
 
 

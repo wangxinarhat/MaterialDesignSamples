@@ -2,11 +2,11 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/item_list_main_demo_title"
     style="@style/BaseTextStyle"
-    android:layout_margin="@dimen/dimen_basic4"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/ripple_bg"
     android:gravity="center"
-    android:padding="@dimen/dimen_basic4"
+    android:layout_margin="@dimen/dimen_basic1"
+    android:padding="@dimen/dimen_basic2"
     android:textColor="@color/grey_white_1000" />
 
