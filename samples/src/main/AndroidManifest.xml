@@ -44,7 +44,7 @@
         </receiver>
 
         <!--服务-->
-        <service android:name="wang.wangxinarhat.materialdesignsamples.service.PoService"/>
+        <service android:name="wang.wangxinarhat.materialdesignsamples.service.PoService" />
 
 
     </application>
