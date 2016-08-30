@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_appointment_detail_rootview"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background">
 
-
-    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/activity_collapsingtoolbarlayout_demo_main_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
-
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:id="@+id/activity_collapsingtoolbarlayout_demo_main_content"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:fitsSystemWindows="true">
+    <!--
         <android.support.design.widget.AppBarLayout
             android:id="@+id/activity_collapsingtoolbarlayout_demo_appbar"
             android:layout_width="match_parent"
-            android:layout_height="256dp"
+            android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:minHeight="56dp"
+            >
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/activity_collapsingtoolbarlayout_demo_collapsing_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
                 android:theme="@style/AppTheme.AppBarOverlay"
                 app:contentScrim="?attr/colorPrimary"
@@ -34,21 +29,18 @@
                 app:expandedTitleMarginEnd="64dp"
                 app:expandedTitleMarginStart="48dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-
                 <FrameLayout
-
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-
+                    android:layout_height="256dp"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
+                    app:layout_collapseParallaxMultiplier ="0.6"
                     app:layout_collapseMode="parallax">
 
                     <android.support.v4.view.ViewPager
                         android:id="@+id/activity_collapsingtoolbarlayout_demo_viewpager"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"/>
 
                     <LinearLayout
                         android:id="@+id/activity_collapsingtoolbarlayout_demo_viewpager_indicator"
@@ -57,349 +49,392 @@
                         android:layout_gravity="bottom"
                         android:background="@drawable/indicator_gradient_bg"
                         android:gravity="center"
-                        android:orientation="horizontal" />
+                        android:orientation="horizontal"/>
 
                 </FrameLayout>
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/activity_collapsingtoolbarlayout_demo_toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:layout_collapseMode="pin"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/activity_collapsingtoolbarlayout_demo_swipe_layout"
+      -->
+
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                  xmlns:tools="http://schemas.android.com/tools"
+                                                  android:id="@+id/activity_collapsingtoolbarlayout_demo_swipe_layout"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="match_parent"
+                                                  android:addStatesFromChildren="true"
+                                                  app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+
             android:layout_height="match_parent"
-            android:addStatesFromChildren="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-            <android.support.v4.widget.NestedScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                android:background="@color/grey_white_1000"
+                android:orientation="vertical">
 
 
+                <TextView
+                    android:id="@+id/activity_game_detail_title"
+                    style="@style/FragmentBaseTextStyle"
+                    android:layout_marginLeft="@dimen/dimen_basic4"
+                    android:layout_marginTop="@dimen/dimen_basic4"
+                    android:textColor="@color/text_black"/>
+
+
+                <!--android:padding="@dimen/dimen_basic3"-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dimen_basic1"
+                    android:layout_marginLeft="@dimen/dimen_basic3"
+                    android:layout_marginRight="@dimen/dimen_basic3"
+                    android:layout_marginTop="@dimen/dimen_basic1"
                     android:background="@color/grey_white_1000"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dimen_basic1"
+                    android:paddingTop="@dimen/dimen_basic1">
 
 
-                    <TextView
-                        android:id="@+id/activity_game_detail_title"
-                        style="@style/FragmentBaseTextStyle"
-                        android:layout_marginLeft="@dimen/dimen_basic4"
-                        android:layout_marginTop="@dimen/dimen_basic4"
-                        android:textColor="@color/text_black" />
-
-
-                    <!--android:padding="@dimen/dimen_basic3"-->
-                    <LinearLayout
+                    <!--card1-->
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="@dimen/dimen_basic1"
-                        android:layout_marginLeft="@dimen/dimen_basic3"
-                        android:layout_marginRight="@dimen/dimen_basic3"
-                        android:layout_marginTop="@dimen/dimen_basic1"
-                        android:background="@color/grey_white_1000"
-                        android:orientation="vertical"
-                        android:paddingBottom="@dimen/dimen_basic1"
-                        android:paddingTop="@dimen/dimen_basic1">
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="@dimen/dimen_basic1"
+                        app:cardElevation="2px">
 
-
-                        <!--card1-->
-                        <android.support.v7.widget.CardView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:cardBackgroundColor="@color/background"
-                            app:cardCornerRadius="@dimen/dimen_basic1"
-                            app:cardElevation="2px">
+                            android:orientation="vertical">
 
+                            <!-- 时间-->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_margin="@dimen/dimen_basic1"
+                                android:orientation="horizontal">
 
-                                <!-- 时间-->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="@dimen/dimen_basic1"
-                                    android:orientation="horizontal">
-
-                                    <RelativeLayout
-                                        android:layout_width="88dp"
-                                        android:layout_height="wrap_content">
-
-                                        <TextView
-
-                                            style="@style/GameDetailLeftTextFormatStyle"
-                                            android:text="时" />
-
-
-                                        <TextView
-                                            style="@style/GameDetailRightTextFormatStyle"
-                                            android:text="间" />
-
-                                    </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="88dp"
+                                    android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:id="@+id/activity_game_start_time"
-                                        style="@style/CourseTimeTextStyle"
-                                        android:text="2016-07-12"
-                                        tools:text="2016-07-12" />
 
-
-                                </LinearLayout>
-
-
-                                <include layout="@layout/fragment_course_detail_divider_include" />
-
-                                <!--人数-->
-                                <LinearLayout
-
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="@dimen/dimen_basic1">
-
-                                    <RelativeLayout
-                                        android:layout_width="88dp"
-                                        android:layout_height="wrap_content">
-
-                                        <TextView
-                                            style="@style/GameDetailLeftTextFormatStyle"
-                                            android:text="人" />
-
-
-                                        <TextView
-                                            style="@style/GameDetailRightTextFormatStyle"
-                                            android:text="数" />
-
-                                    </RelativeLayout>
+                                        style="@style/GameDetailLeftTextFormatStyle"
+                                        android:text="时"/>
 
 
                                     <TextView
-                                        android:id="@+id/activity_game_detail_apply_people"
-                                        style="@style/CourseTimeTextStyle"
-                                        android:text="2"
-                                        android:textColor="@color/app_main_color" />
+                                        style="@style/GameDetailRightTextFormatStyle"
+                                        android:text="间"/>
 
-                                    <TextView
-                                        android:id="@+id/activity_game_detail_max_people"
-                                        style="@style/CourseTimeTextStyle"
-                                        android:text="/6" />
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/activity_game_start_time"
+                                    style="@style/CourseTimeTextStyle"
+                                    android:text="2016-07-12"
+                                    tools:text="2016-07-12"/>
 
 
-                                </LinearLayout>
                             </LinearLayout>
 
-                        </android.support.v7.widget.CardView>
 
+                            <include layout="@layout/fragment_course_detail_divider_include"/>
 
-                        <!--card2-->
-
-                        <android.support.v7.widget.CardView
-
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dimen_basic2"
-                            app:cardBackgroundColor="@color/background"
-                            app:cardCornerRadius="@dimen/dimen_basic1"
-                            app:cardElevation="2px">
-
+                            <!--人数-->
                             <LinearLayout
+
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
-                                <!-- 赛制-->
-                                <LinearLayout
+                                android:layout_margin="@dimen/dimen_basic1">
 
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="@dimen/dimen_basic1"
-                                    android:orientation="horizontal">
+                                <RelativeLayout
+                                    android:layout_width="88dp"
+                                    android:layout_height="wrap_content">
 
-
-                                    <RelativeLayout
-                                        android:layout_width="88dp"
-                                        android:layout_height="wrap_content">
-
-                                        <TextView
-                                            style="@style/GameDetailLeftTextFormatStyle"
-                                            android:text="赛" />
-
-
-                                        <TextView
-                                            style="@style/GameDetailRightTextFormatStyle"
-                                            android:text="制" />
-
-                                    </RelativeLayout>
+                                    <TextView
+                                        style="@style/GameDetailLeftTextFormatStyle"
+                                        android:text="人"/>
 
 
                                     <TextView
-                                        android:id="@+id/activity_game_format"
-                                        style="@style/CourseTimeTextStyle"
-                                        tools:text="循环淘汰赛 五局三胜 " />
+                                        style="@style/GameDetailRightTextFormatStyle"
+                                        android:text="数"/>
+
+                                </RelativeLayout>
 
 
-                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/activity_game_detail_apply_people"
+                                    style="@style/CourseTimeTextStyle"
+                                    android:text="2"
+                                    android:textColor="@color/app_main_color"/>
+
+                                <TextView
+                                    android:id="@+id/activity_game_detail_max_people"
+                                    style="@style/CourseTimeTextStyle"
+                                    android:text="/6"/>
 
 
-                                <include layout="@layout/fragment_course_detail_divider_include" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
 
 
-                                <!-- 地址-->
+                    <!--card2-->
+
+                    <android.support.v7.widget.CardView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_basic2"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="@dimen/dimen_basic1"
+                        app:cardElevation="2px">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <!-- 赛制-->
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_basic1"
+                                android:orientation="horizontal">
+
+
+                                <RelativeLayout
+                                    android:layout_width="88dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        style="@style/GameDetailLeftTextFormatStyle"
+                                        android:text="赛"/>
+
+
+                                    <TextView
+                                        style="@style/GameDetailRightTextFormatStyle"
+                                        android:text="制"/>
+
+                                </RelativeLayout>
+
+
+                                <TextView
+                                    android:id="@+id/activity_game_format"
+                                    style="@style/CourseTimeTextStyle"
+                                    tools:text="循环淘汰赛 五局三胜 "/>
+
+
+                            </LinearLayout>
+
+
+                            <include layout="@layout/fragment_course_detail_divider_include"/>
+
+
+                            <!-- 地址-->
+
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_basic1"
+                                android:orientation="horizontal">
+
 
                                 <LinearLayout
+                                    android:layout_width="wrap_content"
 
-                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="@dimen/dimen_basic1"
-                                    android:orientation="horizontal">
-
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
 
                                     <LinearLayout
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
 
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:orientation="vertical">
-
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
+                                        <RelativeLayout
+                                            android:layout_width="88dp"
                                             android:layout_height="wrap_content">
 
-                                            <RelativeLayout
-                                                android:layout_width="88dp"
-                                                android:layout_height="wrap_content">
-
-                                                <TextView
-                                                    style="@style/GameDetailLeftTextFormatStyle"
-                                                    android:text="地" />
-
-
-                                                <TextView
-                                                    style="@style/GameDetailRightTextFormatStyle"
-                                                    android:text="址" />
-
-                                            </RelativeLayout>
+                                            <TextView
+                                                style="@style/GameDetailLeftTextFormatStyle"
+                                                android:text="地"/>
 
 
                                             <TextView
-                                                android:id="@+id/activity_game_detail_court_name"
-                                                style="@style/CourseTimeTextStyle"
-                                                android:layout_gravity="center_vertical"
-                                                tools:text="海布里" />
+                                                style="@style/GameDetailRightTextFormatStyle"
+                                                android:text="址"/>
+
+                                        </RelativeLayout>
 
 
-                                        </LinearLayout>
-
-
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:orientation="horizontal">
-
-                                            <View
-                                                android:layout_width="88dp"
-                                                android:layout_height="wrap_content" />
-
-                                            <TextView
-                                                android:id="@+id/fragment_appointment_detail_court_address"
-                                                style="@style/CourseTimeTextStyle"
-                                                android:layout_gravity="center_vertical"
-                                                android:layout_marginBottom="@dimen/dimen_basic1"
-                                                tools:text="贝克街221号" />
-
-
-                                        </LinearLayout>
+                                        <TextView
+                                            android:id="@+id/activity_game_detail_court_name"
+                                            style="@style/CourseTimeTextStyle"
+                                            android:layout_gravity="center_vertical"
+                                            tools:text="海布里"/>
 
 
                                     </LinearLayout>
 
 
-                                    <include layout="@layout/detail_course_vertical_divider_black_include" />
-
-                                    <ImageView
-                                        android:id="@+id/fargment_appointment_detail_contyent_address"
-                                        android:layout_width="wrap_content"
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_marginLeft="@dimen/dimen_basic2"
-                                        android:layout_marginRight="@dimen/dimen_basic4"
-                                        android:background="@mipmap/ic_private_teacher_location" />
+                                        android:orientation="horizontal">
+
+                                        <View
+                                            android:layout_width="88dp"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/fragment_appointment_detail_court_address"
+                                            style="@style/CourseTimeTextStyle"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginBottom="@dimen/dimen_basic1"
+                                            tools:text="贝克街221号"/>
+
+
+                                    </LinearLayout>
 
 
                                 </LinearLayout>
 
 
-                                <include layout="@layout/fragment_course_detail_divider_include" />
-                                <!--金额-->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
+                                <include layout="@layout/detail_course_vertical_divider_black_include"/>
+
+                                <ImageView
+                                    android:id="@+id/fargment_appointment_detail_contyent_address"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="@dimen/dimen_basic1"
-                                    android:orientation="horizontal">
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/dimen_basic2"
+                                    android:layout_marginRight="@dimen/dimen_basic4"
+                                    android:background="@mipmap/ic_private_teacher_location"/>
 
-                                    <RelativeLayout
-                                        android:layout_width="88dp"
-                                        android:layout_height="wrap_content">
-
-                                        <TextView
-                                            style="@style/GameDetailLeftTextFormatStyle"
-                                            android:text="金" />
-
-
-                                        <TextView
-                                            style="@style/GameDetailRightTextFormatStyle"
-                                            android:text="额" />
-
-                                    </RelativeLayout>
-
-
-                                    <TextView
-                                        android:id="@+id/activity_game_detail_total_money"
-                                        style="@style/CourseTimeTextStyle"
-                                        android:textColor="@color/orange_400"
-                                        tools:text="¥188" />
-
-                                    <TextView
-                                        android:id="@+id/activity_game_detail_money_renzi"
-                                        style="@style/CourseTimeTextStyle"
-                                        android:text="/人" />
-
-
-                                </LinearLayout>
 
                             </LinearLayout>
 
-                        </android.support.v7.widget.CardView>
+
+                            <include layout="@layout/fragment_course_detail_divider_include"/>
+                            <!--金额-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_basic1"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="88dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        style="@style/GameDetailLeftTextFormatStyle"
+                                        android:text="金"/>
 
 
-                        <TextView
+                                    <TextView
+                                        style="@style/GameDetailRightTextFormatStyle"
+                                        android:text="额"/>
 
-                            android:id="@+id/activity_game_detail_content_des"
-                            style="@style/CourseTimeTextStyle"
-                            android:layout_marginBottom="@dimen/dimen_basic1"
-                            android:layout_marginTop="@dimen/dimen_basic2"
-                            android:singleLine="false"
-
-                            android:textSize="@dimen/text_size_subhead"
-                            tools:text="这是描述内容  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊" />
+                                </RelativeLayout>
 
 
-                    </LinearLayout>
+                                <TextView
+                                    android:id="@+id/activity_game_detail_total_money"
+                                    style="@style/CourseTimeTextStyle"
+                                    android:textColor="@color/orange_400"
+                                    tools:text="¥188"/>
+
+                                <TextView
+                                    android:id="@+id/activity_game_detail_money_renzi"
+                                    style="@style/CourseTimeTextStyle"
+                                    android:text="/人"/>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <TextView
+
+                        android:id="@+id/activity_game_detail_content_des"
+                        style="@style/CourseTimeTextStyle"
+                        android:layout_marginBottom="@dimen/dimen_basic1"
+                        android:layout_marginTop="@dimen/dimen_basic2"
+                        android:singleLine="false"
+
+                        android:textSize="@dimen/text_size_subhead"
+                        tools:text="这是描述内容  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"/>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:paddingBottom="@dimen/dimen_basic2"
+                    android:paddingLeft="@dimen/dimen_basic3"
+                    android:paddingTop="@dimen/dimen_basic2"
+                    android:text="举办方"
+                    android:textColor="@color/text_black_secondary"
+                    android:textSize="@dimen/text_size_subhead"/>
+
+                <include layout="@layout/popup_detail_course_divider_black_include"/>
+
+                <include layout="@layout/item_detail_appointment_publisher"/>
+
+
+                <include layout="@layout/popup_detail_course_divider_black_include"/>
+
+
+                <LinearLayout
+                    android:id="@+id/activity_game_detail_content_apply_people_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
 
 
                     <TextView
@@ -409,136 +444,51 @@
                         android:paddingBottom="@dimen/dimen_basic2"
                         android:paddingLeft="@dimen/dimen_basic3"
                         android:paddingTop="@dimen/dimen_basic2"
-                        android:text="举办方"
+                        android:text="报名人数"
                         android:textColor="@color/text_black_secondary"
-                        android:textSize="@dimen/text_size_subhead" />
-
-                    <include layout="@layout/popup_detail_course_divider_black_include" />
-
-                    <include layout="@layout/item_detail_appointment_publisher" />
-
-
-                    <include layout="@layout/popup_detail_course_divider_black_include" />
-
+                        android:textSize="@dimen/text_size_subhead"/>
 
                     <LinearLayout
-                        android:id="@+id/activity_game_detail_content_apply_people_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:orientation="vertical">
+                        android:gravity="center_vertical"
+                        android:paddingBottom="@dimen/dimen_basic2"
+                        android:paddingTop="@dimen/dimen_basic2">
 
 
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/background"
-                            android:paddingBottom="@dimen/dimen_basic2"
-                            android:paddingLeft="@dimen/dimen_basic3"
-                            android:paddingTop="@dimen/dimen_basic2"
-                            android:text="报名人数"
-                            android:textColor="@color/text_black_secondary"
-                            android:textSize="@dimen/text_size_subhead" />
+                            android:id="@+id/activity_game_detail_content_apply_num_peoples"
+                            style="@style/FragmentBaseTextStyle"
+                            android:layout_marginLeft="@dimen/dimen_basic3"
+                            android:gravity="center_vertical"
+                            tools:text="6人"/>
 
                         <LinearLayout
+                            android:id="@+id/activity_game_detail_content_apply_people_avatar_holder"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/avatar_size_big"
+                            android:layout_marginLeft="@dimen/dimen_basic2"
                             android:gravity="center_vertical"
-                            android:paddingBottom="@dimen/dimen_basic2"
-                            android:paddingTop="@dimen/dimen_basic2">
+                            android:orientation="horizontal"
+                            android:paddingRight="@dimen/dimen_basic3">
 
-
-                            <TextView
-                                android:id="@+id/activity_game_detail_content_apply_num_peoples"
-                                style="@style/FragmentBaseTextStyle"
-                                android:layout_marginLeft="@dimen/dimen_basic3"
-                                android:gravity="center_vertical"
-                                tools:text="6人" />
-
-                            <LinearLayout
-                                android:id="@+id/activity_game_detail_content_apply_people_avatar_holder"
-                                android:layout_width="match_parent"
-                                android:layout_height="@dimen/avatar_size_big"
-                                android:layout_marginLeft="@dimen/dimen_basic2"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal"
-                                android:paddingRight="@dimen/dimen_basic3">
-
-
-                            </LinearLayout>
 
                         </LinearLayout>
+
                     </LinearLayout>
-
-                    <!--<include layout="@layout/item_detail_course_apply_num" />-->
-
-                    <include layout="@layout/popup_detail_course_divider_black_include" />
-
-
                 </LinearLayout>
 
+                <!--<include layout="@layout/item_detail_course_apply_num" />-->
 
-            </android.support.v4.widget.NestedScrollView>
-
-
-        </android.support.v4.widget.SwipeRefreshLayout>
-    </android.support.design.widget.CoordinatorLayout>
+                <include layout="@layout/popup_detail_course_divider_black_include"/>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
-        android:background="@color/grey_white_1000"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/dimen_basic1"
-        android:paddingLeft="@dimen/dimen_basic2"
-        android:paddingRight="@dimen/dimen_basic2"
-        android:paddingTop="@dimen/dimen_basic1">
+            </LinearLayout>
 
 
-        <TextView
-            android:id="@+id/fragment_appointment_detail_myappointment_bottombar_hint"
-            style="@style/BaseTextStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="@color/app_main_color"
-            android:textSize="@dimen/text_size_body"
-            tools:text="提示语" />
-
-        <Button
-
-            android:id="@+id/fragment_appointment_detail_myappointment_bottombar_button1"
-            style="@style/BottomBarButtonStyle"
-            android:layout_width="@dimen/dimen_basic0"
-            android:layout_weight="1"
-
-            tools:text="btn1" />
-
-        <Button
+        </android.support.v4.widget.NestedScrollView>
 
 
-            android:id="@+id/fragment_appointment_detail_myappointment_bottombar_button2"
-            style="@style/BottomBarButtonStyle"
-            android:layout_width="@dimen/dimen_basic0"
-            android:layout_weight="1"
+    </android.support.v4.widget.SwipeRefreshLayout>
+</android.support.design.widget.CoordinatorLayout>
 
-            tools:text="btn2" />
-
-        <Button
-
-            android:id="@+id/fragment_appointment_detail_myappointment_bottombar_button3"
-
-            style="@style/BottomBarButtonStyle"
-            android:layout_width="@dimen/dimen_basic0"
-            android:layout_weight="1"
-
-            tools:text="btn3" />
-
-
-    </LinearLayout>
-
-
-</FrameLayout>

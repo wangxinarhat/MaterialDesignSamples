@@ -5,4 +5,6 @@
         <item >@color/pink_300</item>
         <item >@color/green_300</item>
     </integer-array>
+
+    <integer name="container_id"> 1212</integer>
 </resources>

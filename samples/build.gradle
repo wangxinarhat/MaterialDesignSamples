@@ -34,4 +34,5 @@ dependencies {
     compile 'com.diegocarloslima:fgelv:0.1.+@aar'
 
     compile 'com.race604.flyrefresh:library:2.0.0'
+    compile 'com.github.clans:fab:1.6.4'
 }

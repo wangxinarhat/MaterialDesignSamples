@@ -58,8 +58,6 @@ public class RecyclerViewDemoActivity extends BaseActivity implements SwipeRefre
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(linearLayoutManager);
-
-
         RecyclerDemoAdapter adapter = new RecyclerDemoAdapter(initData(), this);
 
 
@@ -108,6 +106,8 @@ public class RecyclerViewDemoActivity extends BaseActivity implements SwipeRefre
     public void onItemClick(View view, int position) {
 
         startActivity(CollapsingToolbarLayoutDemoActivity.getStartIntent(position, mList.get(position)));
+
+
     }
 
     @Override

@@ -30,9 +30,12 @@
         <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.PinnedSectionListActivity" />
         <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.ExpandableListActivity" />
         <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.PinnedHeaderExpandableListViewDemoActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.FloatingGroupExpandableListViewActivity" />
         <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.ToolbarSearchDemoActivity" />
         <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.ScreenStatusActivity" />
         <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.FlyDemoActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.MaterialFloatActionButtonActivity" />
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.FilterDemoActivity" android:theme="@style/AppTheme.NoActionBar"/>
 
 
         <!--广播接收者-->

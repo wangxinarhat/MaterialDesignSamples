@@ -28,9 +28,6 @@ public class RecyclerDemoAdapter extends RecyclerView.Adapter<RecyclerDemoAdapte
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_cardview, parent, false);
 
-
-
-
         return new ViewHolder(view);
     }
 

@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +24,7 @@ import java.net.NetworkInterface;
 import java.util.Collections;
 import java.util.List;
 
+import wang.wangxinarhat.materialdesignsamples.R;
 import wang.wangxinarhat.materialdesignsamples.global.BaseApplication;
 
 /**
@@ -29,126 +32,57 @@ import wang.wangxinarhat.materialdesignsamples.global.BaseApplication;
  * Created by sacowiw on 15/10/24.
  */
 public class SomeUtils {
+
+
+    public static void initSwipeRefreshLayout( SwipeRefreshLayout swipeRefreshLayout) {
+
+        Resources resources = BaseApplication.getApplication().getResources();
+
+        int[] colors = resources.getIntArray(R.array.refresh_color);
+        swipeRefreshLayout.setColorSchemeColors(colors);
+
+        swipeRefreshLayout.setProgressViewOffset(false, 0, (int) TypedValue
+                .applyDimension(TypedValue.COMPLEX_UNIT_DIP, 24,
+                        resources.getDisplayMetrics()));
+        swipeRefreshLayout.setProgressViewOffset(false, 0, dip2px(24));
+    }
+
+
     /**
-     * 清空常规（动态,训练,资讯）内容的提示数量
+     * Snacherbar工具类，1500ms
      *
-     * @param type
-     * @param cid
+     * @param container
+     * @param msg
      */
-//    public static void clearNormal(String type, String cid) {
-//        String url = Uri.parse(AppContent.CLEAR_NORMAL).buildUpon().appendQueryParameter("uid", BaseApplication.getApplication().getUid()).
-//                appendQueryParameter("token", BaseApplication.getApplication().getToken()).
-//                appendQueryParameter("type", type).
-//                appendQueryParameter("cid", cid).build().toString();
-//        VolleyHelper.get(url, new VolleyHelper.Callback() {
-//            @Override
-//            public void success(String response) {
-//
-//            }
-//
-//            @Override
-//            public void error(VolleyError error) {
-//
-//            }
-//        });
-//    }
+    public static void shortSnackbar(View container, String msg) {
+
+        Snackbar.make(container, msg, Snackbar.LENGTH_SHORT).show();
+    }
+
+    public static void shortSnackbar(View container, int resId) {
+
+        Snackbar.make(container, container.getContext().getResources().getString(resId), Snackbar.LENGTH_SHORT).show();
+    }
+
 
     /**
-     * 清空单个系统内容消息的提示数量
-     *
-     * @param cid
-     */
-//    public static void clearSystem(String cid) {
-//        String url = Uri.parse(AppContent.CLEAR_SYSTEM).buildUpon().
-//                appendQueryParameter("uid", BaseApplication.getApplication().getUid()).
-//                appendQueryParameter("token", BaseApplication.getApplication().getToken()).
-//                appendQueryParameter("cid", cid).build().toString();
-//        VolleyHelper.get(url, new VolleyHelper.Callback() {
-//            @Override
-//            public void success(String response) {
-//
-//            }
-//
-//            @Override
-//            public void error(VolleyError error) {
-//
-//            }
-//        });
-//    }
-
-    /**
-     * 修改tablayout字体
-     *
-     * @param tabLayout
-     */
-//    public static void changeTabsFont(final TabLayout tabLayout, ViewPager viewPager) {
-//        changeTagsFontEveryWhere(tabLayout, 0);
-//        tabLayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager) {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                super.onTabSelected(tab);
-//                changeTagsFontEveryWhere(tabLayout, tab.getPosition());
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//                super.onTabUnselected(tab);
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//                super.onTabReselected(tab);
-//            }
-//        });
-//
-//    }
-
-//    private static void changeTagsFontEveryWhere(TabLayout tabLayout, int position) {
-//        if (tabLayout != null) {
-//            try {
-//                Typeface tp = Typeface.createFromFile(AppContent.FONT_NORMAL_PATH);
-//                Typeface tpBold = Typeface.createFromFile(AppContent.FONT_BOLD_PATH);
-//
-//                ViewGroup vg = (ViewGroup) tabLayout.getChildAt(0);
-//                int tabsCount = vg.getChildCount();
-//                for (int j = 0; j < tabsCount; j++) {
-//                    ViewGroup vgTab = (ViewGroup) vg.getChildAt(j);
-//                    int tabChildsCount = vgTab.getChildCount();
-//                    for (int i = 0; i < tabChildsCount; i++) {
-//                        View tabViewChild = vgTab.getChildAt(i);
-//                        if (tabViewChild instanceof TextView) {
-//                            if (j == position) {
-//                                ((TextView) tabViewChild).setTypeface(tpBold);
-//                            } else {
-//                                ((TextView) tabViewChild).setTypeface(tp);
-//                            }
-//
-//                        }
-//                    }
-//                }
-//            } catch (Exception e) {
-//                Log.e("wangqiujia", "Font is not exist");
-//            }
-//        }
-//    }
-
-    /**
-     * 数字大于10000的将格式化为*。*万
-     *
-     * @param s
+     * dp转px
+     * @param dp
      * @return
      */
-    public static String formatNumber(String s) {
+    public static int dip2px(float dp) {
+        float density = BaseApplication.getApplication().getResources().getDisplayMetrics().density;
+        return (int) (density * dp + 0.5);
+    }
 
-        if (s != null) {
-            if (s.length() < 5) {
-                return s;
-            } else {
-                return String.format("%.1f", Double.valueOf(s) / 10000) + "万";
-            }
-        } else {
-            return "0";
-        }
+    /**
+     * px转dp
+     * @param px
+     * @return
+     */
+    public static float px2dip(float px) {
+        float density = BaseApplication.getApplication().getResources().getDisplayMetrics().density;
+        return px / density;
     }
 
     /**

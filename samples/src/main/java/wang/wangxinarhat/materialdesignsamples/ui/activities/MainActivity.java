@@ -82,7 +82,6 @@ public class MainActivity extends BaseActivity
     private void initSwipeRefreshLayout() {
 
 
-
         int[] colors = getResources().getIntArray(R.array.refresh_color);
         mSwipeRefreshLayout.setColorSchemeColors(colors);
 
@@ -119,12 +118,15 @@ public class MainActivity extends BaseActivity
         mList.add("CoordinatorLayout & TabLayout 结合ViewPagerDemo");
         mList.add("仿qq联系人列表Demo");
         mList.add("Toolbar上searchView实现");
+        mList.add("筛选Demo");
+
         mList.add("纸飞机Demo");
 
         mList.add("PinnedHeaderExpandableListViewDemoActivity    Demo");
         mList.add("FloatingGroupExpandableListView  Demo");
         mList.add("EditText限制输入限制Demo");
         mList.add("监听手机屏幕状态Demo");
+        mList.add("Material Design FloatActionButton类似印象笔记");
 //        mList.add(getString(R.string.recycler_itemclick_demo));
 
         return mList;
@@ -152,21 +154,31 @@ public class MainActivity extends BaseActivity
                 startActivity(ToolbarSearchDemoActivity.getStartIntent());
                 break;
             case 4:
+                startActivity(FilterDemoActivity.getStartIntent());
+                break;
+
+            case 5:
                 startActivity(FlyDemoActivity.getStartIntent());
                 break;
-  case 5:
+
+
+            case 6:
                 startActivity(PinnedHeaderExpandableListViewDemoActivity.getStartIntent());
                 break;
 
-            case 6:
+            case 7:
                 startActivity(FloatingGroupExpandableListViewActivity.getStartIntent());
                 break;
 
-            case 7:
+            case 8:
                 startActivity(EditTextDecimalLimitActivity.getStartIntent());
                 break;
-            case 8:
+            case 9:
                 startActivity(ScreenStatusActivity.getStartIntent());
+                break;
+
+            case 10:
+                startActivity(MaterialFloatActionButtonActivity.getStartIntent());
                 break;
         }
 
@@ -188,14 +200,13 @@ public class MainActivity extends BaseActivity
     public void onRefresh() {
 
 
-
         mSwipeRefreshLayout.setRefreshing(true);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 mSwipeRefreshLayout.setRefreshing(false);
             }
-        },2000);
+        }, 2000);
     }
 
 
@@ -206,11 +217,7 @@ public class MainActivity extends BaseActivity
         if (mDrawer.isDrawerOpen(GravityCompat.START)) {
             mDrawer.closeDrawer(GravityCompat.START);
         } else {
-
-
             super.onBackPressed();
-
-
         }
 
 

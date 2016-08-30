@@ -3,14 +3,10 @@ package wang.wangxinarhat.materialdesignsamples.ui.activities;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,10 +29,10 @@ import wang.wangxinarhat.materialdesignsamples.utils.ResourcesUtils;
 /**
  * Created by wang on 2016/3/1.
  */
-public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements ViewPager.OnPageChangeListener, SwipeRefreshLayout.OnRefreshListener, Toolbar.OnMenuItemClickListener {
+public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements ViewPager.OnPageChangeListener, Toolbar.OnMenuItemClickListener {
 
 
-    @Bind(R.id.activity_collapsingtoolbarlayout_demo_viewpager)
+   /* @Bind(R.id.activity_collapsingtoolbarlayout_demo_viewpager)
     ViewPager viewpager;
     @Bind(R.id.activity_collapsingtoolbarlayout_demo_viewpager_indicator)
     LinearLayout indicator;
@@ -44,9 +40,9 @@ public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements
     SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Bind(R.id.activity_collapsingtoolbarlayout_demo_appbar)
-    AppBarLayout mAppbar;
+    AppBarLayout mAppbar;*/
 
-    @Bind(R.id.activity_collapsingtoolbarlayout_demo_toolbar)
+    @Bind(R.id.toolbar)
     Toolbar mToolbar;
 
     @BindDrawable(R.drawable.scenery1)
@@ -80,9 +76,9 @@ public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements
         int position = intent.getIntExtra("position", -1);
         DemoBean bean = intent.getParcelableExtra("bean");
 
-        initView(bean);
+//        initView(bean);
 
-        mAppbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+      /*  mAppbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
 
@@ -94,7 +90,7 @@ public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements
             }
         });
 
-
+*/
         // App Logo
         mToolbar.setLogo(R.mipmap.ic_launcher);
         // Title
@@ -119,12 +115,13 @@ public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements
         return true;
     }
 
-    private void initView(DemoBean bean) {
+  /*  private void initView(DemoBean bean) {
 
 
         viewpager.setAdapter(new MyPagerAdapter(prepareImageView()));
         viewpager.setOnPageChangeListener(this);
         initSwipeRefreshLayout();
+
 
     }
 
@@ -142,7 +139,7 @@ public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements
         mSwipeRefreshLayout.setOnRefreshListener(this);
 
     }
-
+*/
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -158,7 +155,7 @@ public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements
 
     }
 
-    @Override
+  /*  @Override
     public void onRefresh() {
 
         mSwipeRefreshLayout.setRefreshing(true);
@@ -172,7 +169,7 @@ public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements
 
 
     }
-
+*/
     @Override
     public boolean onMenuItemClick(MenuItem item) {
 
@@ -282,7 +279,7 @@ public class CollapsingToolbarLayoutDemoActivity extends BaseActivity implements
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 imageView.setImageResource(R.drawable.ic_auto_scroll_view_pager_unshow);
                 mIcons.add(imageView);
-                indicator.addView(imageView);
+//                indicator.addView(imageView);
             }
 
         }
