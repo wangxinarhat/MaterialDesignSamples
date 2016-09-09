@@ -36,6 +36,7 @@
         <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.FlyDemoActivity" />
         <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.MaterialFloatActionButtonActivity" />
         <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.FilterDemoActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="wang.wangxinarhat.materialdesignsamples.ui.activities.RecyclerViewOnclickActivity" />
 
 
         <!--广播接收者-->

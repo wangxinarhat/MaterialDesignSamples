@@ -28,7 +28,7 @@ I suppose he was leading by example, Jackman said. Areas of poverty and extreme 
 
 
 
-    <string name="recycler_itemclick_demo">RecyclerView条目点击Demo</string>
+    <string name="recycler_itemclick_demo">[new] RecyclerView条目点击Demo</string>
     <string name="share">分享</string>
     <string name="toast_connect_failed">网络连接异常</string>
 

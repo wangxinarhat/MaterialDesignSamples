@@ -127,7 +127,7 @@ public class MainActivity extends BaseActivity
         mList.add("EditText限制输入限制Demo");
         mList.add("监听手机屏幕状态Demo");
         mList.add("Material Design FloatActionButton类似印象笔记");
-//        mList.add(getString(R.string.recycler_itemclick_demo));
+        mList.add(getString(R.string.recycler_itemclick_demo));
 
         return mList;
     }
@@ -180,6 +180,12 @@ public class MainActivity extends BaseActivity
             case 10:
                 startActivity(MaterialFloatActionButtonActivity.getStartIntent());
                 break;
+
+             case 11:
+                startActivity(RecyclerViewOnclickActivity.getStartIntent());
+                break;
+
+
         }
 
     }

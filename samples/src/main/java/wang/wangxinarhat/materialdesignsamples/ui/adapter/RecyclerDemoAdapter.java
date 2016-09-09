@@ -54,5 +54,7 @@ public class RecyclerDemoAdapter extends RecyclerView.Adapter<RecyclerDemoAdapte
             super(itemView);
             photo = (ImageView) itemView.findViewById(R.id.photo);
         }
+
+
     }
 }
